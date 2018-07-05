@@ -39,7 +39,6 @@ changeMessage thisChMess;
 typedef struct 
 {
 	int				    nodeID;		//This nodeID
-	unsigned long	upTime;		//upTime in ms
 	float 			  dataSensor; //value given by the sensor
   char          typeCapteur; //Type de capteur
 } Payload;
@@ -111,7 +110,6 @@ void loop()
 	{
 		//fill in the Data structure
 		thisData.nodeID = NODEID;
-		thisData.upTime = elapsedTime;
     //TODO récup sensor
 		thisData.dataSensor = GetTemp(23);
 		

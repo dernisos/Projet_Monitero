@@ -36,7 +36,6 @@ changeMessage thisChMess;
 typedef struct 
 {
 	int				    nodeID;		//This nodeID
-	unsigned long		upTime;		//upTime in ms
 	float 			  	dataSensor; //value given by the sensor
 	char          		typeCapteur; //Type de capteur
 } Payload;
@@ -98,7 +97,6 @@ void loop(){
 		{
 			thisData = *(Payload*)radio.DATA; //We assume that the data send contain our format of data
 			Serial.print("Capteur:");Serial.print(thisData.typeCapteur);Serial.print(",numero:");Serial.print(thisData.nodeID);
-			Serial.print(",upTime:");Serial.print(thisData.upTime);
 			Serial.print(",Sensor value:");Serial.print(thisData.dataSensor);
 			//TODO send the data on Internet with GSM card
 		}
